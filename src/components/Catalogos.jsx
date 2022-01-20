@@ -25,7 +25,7 @@ function Catalogos() {
     <>
       {catalogs && catalogs.map((catalog) => {
         return (
-          <div key={catalog._id} className='card' style={{ width: '28rem' }}>
+          <div key={catalog._id} className='card' style={{ width: '100%' }}>
             <div className='card-body'>
               <h5 className='card-title'>{catalog.nombre}</h5>
               <Accordion defaultActiveKey='0' flush>

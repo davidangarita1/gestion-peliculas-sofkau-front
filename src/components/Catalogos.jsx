@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import { Accordion, Button } from 'react-bootstrap'
 import { getCatalogo } from '../utils/get'
+import Pelicula from './Pelicula'
 
 function Catalogos() {
   const dispatch = useDispatch()
@@ -20,28 +22,34 @@ function Catalogos() {
   }, [])
 
   return (
-    <div>
-      {catalogs && console.log(catalogs)}
+    <>
       {catalogs && catalogs.map((catalog) => {
         return (
-          <div key={catalog._id}>
-            <h1>{catalog.nombre}</h1>
-            <>
-              {
-              catalog.pelicula &&
-              Object.keys(catalog.pelicula).map((key) => {
-                return (
-                  <h4 key={key}>{catalog.pelicula[key].nombre}</h4>
-                )
-              })
-              }
-            </>
+          <div key={catalog._id} className='card' style={{ width: '28rem' }}>
+            <div className='card-body'>
+              <h5 className='card-title'>{catalog.nombre}</h5>
+              <Accordion defaultActiveKey='0' flush>
+                <Accordion.Item eventKey='0'>
+                  <Accordion.Header>Peliculas</Accordion.Header>
+                  <Accordion.Body>
+                    {catalog.pelicula &&
+                      Object.keys(catalog.pelicula).map((key) => {
+                        return (
+                          <div key={key}>
+                            <Pelicula pelicula={catalog.pelicula[key]} />
+                          </div>
+                        )
+                      })}
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
+            </div>
           </div>
         )
       })}
       {isLoading && <h1>Cargando...</h1>}
       {error && <h1>Error {error}</h1>}
-    </div>
+    </>
   )
 }
 

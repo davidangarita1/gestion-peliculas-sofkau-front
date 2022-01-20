@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.modalButton {
+  cursor: pointer;
+  font-size: 20px;
+  border-bottom: 1px solid #000;
+}
+
+.modalButton:hover {
+  font-size: 28px;
+  color: rgb(20, 160, 216);
+}

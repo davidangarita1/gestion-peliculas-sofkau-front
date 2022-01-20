@@ -1,17 +1,17 @@
 import axios from 'axios'
-import { CoursesLoading, CoursesLoadSucces, CoursesLoadError } from '../actions/CoursesActions'
+import { CatalogsLoading, CatalogsLoadSucces, CatalogsLoadError } from '../actions/CatalogsActions'
 
-export const getCourse = (id) => (dispatch) => {
-  dispatch(CoursesLoading())
+export const getCatalogo = () => (dispatch) => {
+  dispatch(CatalogsLoading())
 
   const options = {
     method: 'GET',
-    url: `http://localhost:8080/api/course/${id}`
+    url: 'http://localhost:8080/api/catalogos'
   }
 
   axios.request(options).then(function (response) {
-    dispatch(CoursesLoadSucces(response.data))
+    dispatch(CatalogsLoadSucces(response.data))
   }).catch(function (error) {
-    dispatch(CoursesLoadError(error))
+    dispatch(CatalogsLoadError(error))
   })
 }

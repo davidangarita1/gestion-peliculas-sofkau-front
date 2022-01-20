@@ -1,0 +1,8 @@
+const actionsTypesCourses = {
+  LOADING_SUCCESS_COURSES: 'LOADING_SUCCESS_COURSES',
+  LOAD_SUCCESS_COURSES: 'LOAD_SUCCESS_COURSES',
+  LOAD_FAILURE_COURSES: 'LOAD_FAILURE_COURSES',
+  SOFKA_CAMPUS_SCORE_LESSONADDED: 'sofka.campus.score.lessonAdded'
+}
+
+export default actionsTypesCourses

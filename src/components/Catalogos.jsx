@@ -9,15 +9,15 @@ function Catalogos() {
   const { isLoading, catalogs, error } = useSelector(state => state.catalogs)
 
   useEffect(() => {
-    dispatch(getCatalogo('bbbb'))
+    dispatch(getCatalogo())
   }, [])
 
   useEffect(() => {
     const socket = new WebSocket('ws://' + 'localhost:8080' + '/retrieve/' + 'xxxx')
     socket.onmessage = function (m) {
       const data = JSON.parse(m.data)
-      dispatch(data.type)
       console.log('Got message: ' + data.type)
+      dispatch(getCatalogo())
     }
   }, [])
 

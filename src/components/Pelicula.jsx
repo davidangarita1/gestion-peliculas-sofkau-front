@@ -1,7 +1,7 @@
-import { Modal, Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import { useState } from 'react'
 
-function Pelicula({ pelicula }) {
+function Pelicula ({ pelicula }) {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)

@@ -6,7 +6,7 @@ function App () {
   return (
     <div className='App'>
       <div className='row'>
-        <nav className='navbar navbar-dark bg-dark'>
+        <nav className='navbar navbar-dark bg-dark mb-5'>
           <div className='container'>
             <a className='navbar-brand' href='#'>
               <div className='row'>

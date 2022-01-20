@@ -28,7 +28,7 @@ function Catalogos() {
           <div key={catalog._id} className='card mt-3' style={{ width: '100%' }}>
             <div className='card-body'>
               <h5 className='card-title'>{catalog.nombre}</h5>
-              <Accordion defaultActiveKey='0' flush>
+              <Accordion defaultActiveKey='1' flush>
                 <Accordion.Item eventKey='0'>
                   <Accordion.Header>Peliculas</Accordion.Header>
                   <Accordion.Body>

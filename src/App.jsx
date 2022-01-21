@@ -14,7 +14,7 @@ function App () {
                   <img src={popcorn} alt='popcorn' style={{ width: '50px' }} />
                 </div>
                 <div className='col-10'>
-                  <h1>Catalogo de Peliculas</h1>
+                  <h1>Catalogos de Peliculas</h1>
                 </div>
               </div>
             </a>
